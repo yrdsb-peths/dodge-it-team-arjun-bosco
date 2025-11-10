@@ -35,11 +35,15 @@ public class RedBalloon extends Actor
         
         if (isTouching(Hero.class))
         {
+            Hero.stopConfirmation++;
+        }
+        
+        if (Hero.stopConfirmation == 2)
+        {   
             Explode boom = new Explode();
             getWorld().addObject(boom, getX(), getY());
             getWorld().removeObject(this);
         }
-        
         
         
         

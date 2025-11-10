@@ -13,6 +13,7 @@ public class Hero extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int dx = 3;
+    public static int stopConfirmation = 0;
     public void act()
     {
         move(dx);
@@ -25,6 +26,20 @@ public class Hero extends Actor
         {
             dx = -dx;
             move(dx);
+        }
+    
+        
+        if (isTouching(Hero.class))
+        {
+            Hero.stopConfirmation++;
+        }
+        
+        if (Hero.stopConfirmation == 2)
+        {   
+            Death die = new Death();
+            getWorld().addObject(die, getX(), getY());
+            getWorld().removeObject(this);
+            Greenfoot.stop();
         }
         
     }
