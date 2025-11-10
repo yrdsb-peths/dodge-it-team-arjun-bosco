@@ -7,7 +7,7 @@ public class MyWorld extends World {
         RedBalloon rb = new RedBalloon();
         
         addObject(hero, 0, 0);
-        addObject(rb, 0, 0);
+        addObject(rb, 300, 400);
         
     }
 }
