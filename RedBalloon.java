@@ -13,11 +13,18 @@ public class RedBalloon extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int dy = -1;
+    int startingXPos = 10 + Greenfoot.getRandomNumber(590);
     public void act()
     {
         // Add your action code here.
-        int startingXPos = 50 + Greenfoot.getRandomNumber(500);
+        if (getY() < 1)
+        {
+            startingXPos = 50 + Greenfoot.getRandomNumber(500);
+            setLocation(startingXPos, 600);
+        }
         
-        setLocation(getX(), getY() + dy);
+        setLocation(startingXPos, getY() + dy);
+        
+        
     }
 }
