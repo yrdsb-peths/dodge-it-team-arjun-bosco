@@ -16,6 +16,11 @@ public class Hero extends Actor
     public void act()
     {
         move(dx);
+        if(Greenfoot.mouseClicked(null))
+        {
+            dx = -dx;
+            move(dx);
+        }
         if(isAtEdge())
         {
             dx = -dx;
